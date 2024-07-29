@@ -14,4 +14,9 @@ spec:
     spec:
       containers:
         - name: users
-          image: pluckyang/kub-demo-users
+          image: pluckyang/kub-demo-users:latest
+          env: 
+            - name: AUTH_ADDRESS
+              value: localhost
+        - name: auth
+          image: pluckyang/kub-demo-auth:latest
