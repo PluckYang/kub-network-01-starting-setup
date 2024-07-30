@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tasks-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tasks
+  template:
+    metadata:
+      labels:
+        app: tasks
+    spec:
+      containers:
+        - name: users
+          image: pluckyang/kub-demo-tasks:latest
+          env: 
+            - name: AUTH_ADDRESS
+              # value: "10.108.76.191"
+              value: "auth-service."
+            - name: TASKS_FOLDER
+              value: tasks
