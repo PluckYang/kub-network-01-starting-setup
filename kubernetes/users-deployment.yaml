@@ -17,4 +17,5 @@ spec:
           image: pluckyang/kub-demo-users:latest
           env: 
             - name: AUTH_ADDRESS
-              value: "10.108.76.191"
+              # value: "10.108.76.191"
+              value: "auth-service."
